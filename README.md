@@ -4,6 +4,8 @@
 ![image](https://github.com/user-attachments/assets/1579ce99-fcbb-4a85-a4e2-c8c7785c4052)
 ```每個trial，讓受試者讀一篇故事，讀完後給予一個eye Gaze(直視 or 迴避)的刺激，然後詢問三個問題```  
 ``` 以某個人(18)為主角的故事，分成正向情緒以及負向情緒(2)，以及直視or迴避的刺激(2)，所以有18*2*2=72個trial```
+``` Q2 : 覺得故事是正向還是負向 ```
+``` Q3 : 覺得這個故事的情緒是哪種(四選一) ```
 
 ### Data structure
 - EEG Data : ```E:\Fiction_experiment\Data``` (R811 PC)  
@@ -16,7 +18,7 @@
 
 | p01 | Character |	Story |	story. no. | Condition | Arousal | Q2.ACC | Q3.ACC | Condition2 | Condition3 | Eye.OnsetDelay |  
 |---|---|---|---|---|---|---|---|---|---|---|
-| `subjectID` | `CharacterName` |	`Neg. Pos.` |	`50:neg. 60:pos.` | `bit1:3(neg.)         4(pos.) bit2: 3,4(eyeDirect) 1(eyeAverted)` | `story_tone neg.~pos.(1-10)` | `Q2.Accuracy` | `Q3.Accuracy` | `Q3.Acc incor. add bit3 9` | `Q3.Acc incor. add bit3 9`  | `??` | 
+| `subjectID` | `CharacterName` |	`Neg. Pos.` |	`50:neg. 60:pos.` | `bit1:3(neg.)         4(pos.) bit2: 3,4(eyeDirect) 1(eyeAverted)` | `story_tone neg.~pos.(1-10)` | `Q2.Accuracy` | `Q3.Accuracy` | `story condition(emotion)` | `subject think condition(emotion)`  | `??` | 
 | 1 | 克郎 | N | 50 | 33 | 6 | 1 | 1 | 33 | 33 | 0|
 | 2 | 克郎 | P | 60 | 44 | 9 | 1 | 1 | 44 | 44 | 0|
 | 3 | 克郎 | P | 60 | 41 | 4 | 1 | 1 | 41 | 41 | 0|
