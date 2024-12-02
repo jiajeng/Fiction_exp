@@ -26,5 +26,8 @@
 | 7 | 雄治 | N | 50 | 31 | 6 | 1 | 0 | 319 | 319 | 0|
 |..|..|..|..|..|..|..|..|..|..|
 
+### event type
+![image](https://github.com/user-attachments/assets/0f1bf32d-ef89-422c-aa2b-2798024333e1)
+
 
 
