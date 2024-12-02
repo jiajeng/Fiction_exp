@@ -1,8 +1,8 @@
 ## content
-[2024/12/02 Before](#~241202)  
-[2024/12/02](#241202)
+[2024/12/02 Before](#241202_1)  
+[2024/12/02](#241202_2)
 
-## ~241202 
+## ~241202<a id="241202_1"></a>
 `complete convert file and preprocessing`  
 `output to subN/eegSet/rawset (for raw .set file)`  
 `output to subN/eegSet/prep (for preprocessing file)`  
@@ -48,7 +48,7 @@ output : `./eegSet/process/trials_'sttype'to'edtype'/t*.set`
 
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content) 
 
-## 241202
+## 241202<a id="241202_2"></a>
 - ##### allRdTime : get reading Time(unit s)
 input : `filepath`, "string", Get all .set file under this path  
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;`file`, "struct", fields contains folder and name, like output of dir()  
