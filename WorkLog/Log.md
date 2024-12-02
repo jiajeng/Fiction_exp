@@ -1,11 +1,12 @@
-[2024/12/02 Before](#1)  
-[2024/12/02](#2)
+## content
+[2024/12/02 Before](#~241202)  
+[2024/12/02](#241202)
 
-# ~241202<a id="1"></a>
+## ~241202 
 `complete convert file and preprocessing`  
 `output to subN/eegSet/rawset (for raw .set file)`  
 `output to subN/eegSet/prep (for preprocessing file)`  
-  
+
 - ##### vhdr2set : convert .vhdr to .set file  
 input : `vhdrpath`, "string", Get all .vhdr file in this path     
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;`vhdrfile`, "struct", fields is folder and name  
@@ -45,8 +46,9 @@ input : `sttype`, "string", start event type
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;`outpath`, "string", default outpath is `./eegSet/process/`   
 output : `./eegSet/process/trials_'sttype'to'edtype'/t*.set`  
 
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content) 
 
-# 241202<a id="2"></a>
+## 241202
 - ##### allRdTime : get reading Time(unit s)
 input : `filepath`, "string", Get all .set file under this path  
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;`file`, "struct", fields contains folder and name, like output of dir()  
@@ -55,4 +57,5 @@ input : `filepath`, "string", Get all .set file under this path
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;`outpath`, "string", default outpath is `./eegSet/prep/`  
 output : `./eegSet/process/RdTime.mat (RdTime, cell array)`  
 
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content) 
 
