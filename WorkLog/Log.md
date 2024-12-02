@@ -1,4 +1,7 @@
-## ~241202
+[2024/12/02 Before](#1)  
+[2024/12/02](#2)
+
+# ~241202<a id="1"></a>
 `complete convert file and preprocessing`  
 `output to subN/eegSet/rawset (for raw .set file)`  
 `output to subN/eegSet/prep (for preprocessing file)`  
@@ -43,7 +46,7 @@ input : `sttype`, "string", start event type
 output : `./eegSet/process/trials_'sttype'to'edtype'/t*.set`  
 
 
-## 241202
+# 241202<a id="2"></a>
 - ##### allRdTime : get reading Time(unit s)
 input : `filepath`, "string", Get all .set file under this path  
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;`file`, "struct", fields contains folder and name, like output of dir()  
