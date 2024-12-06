@@ -29,5 +29,52 @@
 ### event type
 ![image](https://github.com/user-attachments/assets/0f1bf32d-ef89-422c-aa2b-2798024333e1)
 
+### 資料處理
+#### convert file (vhdr to set)
+input(raw) file `./"subid"/raweeg/ ` `E:\Fiction_experiment\Data\p01\raweeg\ --> in 811 PC`  
+output to `./"subid"/eegSet/Raw/ ` `E:\Fiction_experiment\Data\p01\eegSet\Raw\ --> in 811 PC`  
+#### preprocessing 
+- filter(1-30 Hz)  
+input file ` ./"subid"/eegSet/Raw`    
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; `E:\Fiction_experiment\Data\p01\eegSet\Raw\ --> in 811 PC`  
+output to ` ./"subid"/eegSet/prep/f*.set`    
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; `E:\Fiction_experiment\Data\p01\eegSet\prep\f*.set --> in 811 PC`
+- ASR(criterion is 20)   
+input file `./"subid"/eegSet/prep/f*.set`    
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; `E:\Fiction_experiment\Data\p01\eegSet\prep\f*.set --> in 811 PC`  
+output file `./"subid"/eegSet/prep/af*.set`    
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; `E:\Fiction_experiment\Data\p01\eegSet\prep\af*.set --> in 811 PC`  
+- ICA(retains component brain and other)  
+input file `./"subid"/eegSet/prep/af*.set`  
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; `E:\Fiction_experiment\Data\p01\eegSet\prep\af*.set --> in 811 PC`  
+output file `./"subid"/eegSet/prep/iaf*.set`    
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; `E:\Fiction_experiment\Data\p01\eegSet\prep\iaf*.set --> in 811 PC`  --> not remove component    
+output file `./"subid"/eegSet/prep/riaf*.set`    
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; `E:\Fiction_experiment\Data\p01\eegSet\prep\riaf*.set --> in 811 PC`  --> remove component
+- epoch(get event type 21 to 22, store every trial in individual file)  
+input file `./"subid"/eegSet/prep/riaf*.set`    
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; `E:\Fiction_experiment\Data\p01\eegSet\prep\riaf*.set --> in 811 PC`  
+output file `./"subid"/eegSet/process/trials_21to22`  
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; `E:\Fiction_experiment\Data\p01\eegSet\process\trials_21to22\tn*.set --> in 811 PC`  --> should have excactly 72 trials   
+#### get reading story time  
+- `get trials data` -->  `get time latency in type 21 to 22 ` --> `store all trial time in one column` --> `save this variable`   
+input file`./"subid"/eegSet/process/trials_21to22`  
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; `E:\Fiction_experiment\Data\p01\eegSet\process\trials_21to22\tn*.set --> in 811 PC`  
+output file `./"subid"/eegSet/process/RdTime.mat (variable Name = oTab, size = 72x1 cell)`
+#### transform to frequency data
+input file`./"subid"/eegSet/process/trials_21to22`  
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; `E:\Fiction_experiment\Data\p01\eegSet\process\trials_21to22\tn*.set --> in 811 PC`   
+- ` get 5 second data before finish reading story(type 22)` --> for now 20241206
+- ` using wavelet transform to get frequency complex data(matrix size : freq x time) `
+- ` split complex data to different frequency band(delta,theta , alpha, beta), still in complex data`
+- ` compute average band power `
+- ` store data in .mat file `
+- optional plot
+- ` plot band power in every electrode for every trials, save in output file subfolder "heatmap"`  
+ ![image](https://github.com/user-attachments/assets/062c6877-3b56-4171-80ea-fab04d40fd2e)
+output file `./"subid"/eegSet/process/trials_21to22_TF`
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; `E:\Fiction_experiment\Data\p01\eegSet\process\trials_21to22_TF\tn*.mat --> in 811 PC`
+#### statistic 1st level 
 
+  
 
