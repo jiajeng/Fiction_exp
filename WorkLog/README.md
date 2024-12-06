@@ -1,7 +1,8 @@
 ## content
 [2024/12/02 Before](#241202_1)  
-[2024/12/02](#241202_2)
-[2024/12/05](#241205)
+[2024/12/02](#241202_2)  
+[2024/12/05](#241205)   
+[2024/12/06](#241206)  
 
 ## ~241202<a id="241202_1"></a>
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content)   
