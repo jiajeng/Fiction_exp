@@ -297,8 +297,6 @@ function stat_TF(eventpath,varargin)
             end
         end
 
-
-        
         for nFB = 1:length(fBname)
             % heatmap
             data = stat.(fBname{nFB}).cluPval;
@@ -358,10 +356,9 @@ function stat_TF(eventpath,varargin)
         end% nFB
     end
     % ================================================================
-end
+end % function end
 
-
-
+% define private function
 function clu = getcluster2D(data)
     % input data is masked by some condition
     % input data type is logical or double that only contains 1 and 0
