@@ -18,7 +18,7 @@
 
 | p01 | Character |	Story |	story. no. | Condition | Arousal | Q2.ACC | Q3.ACC | Condition2 | Condition3 | Eye.OnsetDelay |  
 |---|---|---|---|---|---|---|---|---|---|---|
-| `subjectID` | `CharacterName` |	`Neg. Pos.` |	`50:neg. 60:pos.` | `bit1:3(neg.)         4(pos.) bit2: 3,4(eyeDirect) 1(eyeAverted)` | `story_tone neg.~pos.(1-10)` | `Q2.Accuracy` | `Q3.Accuracy` | `story condition(emotion)` | `subject think condition(emotion)`  | `??` | 
+| `subjectID` | `CharacterName` |	`Neg. Pos.` |	`50:neg. 60:pos.` | `bit1:3(neg.)         4(pos.) bit2: 3,4(congruent) 1(incongruent)` | `story_tone Arousal(1-9)` | `Q2.Accuracy subject_think_positive_or_negetive` | `Q3.Accuracy 1/4_emtion_select` | `story condition(emotion)` | `subject think condition(emotion)`  | `??` | 
 | 1 | 克郎 | N | 50 | 33 | 6 | 1 | 1 | 33 | 33 | 0|
 | 2 | 克郎 | P | 60 | 44 | 9 | 1 | 1 | 44 | 44 | 0|
 | 3 | 克郎 | P | 60 | 41 | 4 | 1 | 1 | 41 | 41 | 0|
