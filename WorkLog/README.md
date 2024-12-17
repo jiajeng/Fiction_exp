@@ -167,14 +167,10 @@ output : `./eegSet/process/trial_21to22_TF/tn*.mat (BdPow and TFd "struct" )`
   
 ## 241217
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content)   
-- ##### change in epoch_Data function
-  - epoch_Data : `add reading trial .xlsx and event file`  
-   &ensp;&ensp;&ensp;&ensp;&ensp; `line 98 : suppose trial .xlsx type 31 number - event type 22 index is 1`  
-   &ensp;&ensp;&ensp;&ensp;&ensp;`line 103 : read trial file condition2 if is 99 then this trial are removed`  
-  - for event file : `want to using edat file(.xlsx) to get event file, but some of subject edat file has been changed`  
-   &ensp;&ensp;&ensp;&ensp;&ensp; `so using a "if" in epoch_Data read event file (line 155) to check event file row is 72 or not,`  
-   &ensp;&ensp;&ensp;&ensp;&ensp; `if not check is same as trial file row length`,  
-   &ensp;&ensp;&ensp;&ensp;&ensp; `if not then give users to check`  
+- 合併所有的EEG資料，`add prep_mergeFile.m`  
+- 在prep_mergeFile裡，導入盼琳給的trial資料  
+> [!Note]
+> s16的event 好怪排序跟判林給我的資料不一樣
   
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content) 
 
