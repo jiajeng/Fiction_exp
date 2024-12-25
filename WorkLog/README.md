@@ -14,7 +14,9 @@
 [2024/12/12](#241212)   
 - arrange event data using raw(?close) event file    
 [2024/12/17](#241217)   
-- rearrage run process merge all file first --> aim to get trial     
+- rearrage run process merge all file first --> aim to get trial
+[2024/12/25](#241225)
+- check event table then run all subject preprocessing eeg data
 
 ## ~241202<a id="241202_1"></a>
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content)   
@@ -182,9 +184,9 @@ output : `./eegSet/process/trial_21to22_TF/tn*.mat (BdPow and TFd "struct" )`
 - 這是盼琳給我的結果  
 - ![image](https://github.com/user-attachments/assets/ffbd60ce-6d62-40fc-9e69-254b357c1a9d)
 - 這是盼琳給我的EEG event的結果
-- ![image](https://github.com/user-attachments/assets/38e2cf76-f8f4-4008-a188-7b58d456559a) 
-
-
+- ![image](https://github.com/user-attachments/assets/38e2cf76-f8f4-4008-a188-7b58d456559a)
+  
+- 在eData的資料裡面前面的受試者沒有con_re，只有condition，在後面的受試者就有con_re了，要改成讀這列資料，因為讀錯了所以資料才長的不一樣
 
 
 
