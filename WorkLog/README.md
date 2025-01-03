@@ -16,7 +16,7 @@
 [2024/12/17](#241217)     
 - rearrage run process merge all file first --> aim to get trial  
 [2024/12/25](#241225)  
-- check event table then run all subject preprocessing eeg data
+- check event table then run all subject preprocessing eeg data  
 [2024/12/31](#241231)
 - 
 
