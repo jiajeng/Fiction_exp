@@ -71,9 +71,14 @@ eDat file --> `整理好的eDat file` and event file --> `eeg trial event flie`
 
 ## 行為資料
 ### reading Time
-- 在對eeg做epoch的時候，將每個trial的時長都抓出來，加在resort event file後面。
+- 在對eeg做epoch的時候，將每個trial的時長都抓出來，加在resort event file後面，整理成下面的表格。
+![image](https://github.com/user-attachments/assets/183f75f8-1ef3-44a0-8163-7c03f5486f76)
 ### behave score 
-- 原有的表格(50subjects_behavior score.xlsx)，分給每個受試者的資料夾內(info.txt)
+- 原有的表格(50subjects_behavior score.xlsx)(下表)，分給每個受試者的資料夾內(info.txt)
+![image](https://github.com/user-attachments/assets/441b38f9-1a91-4d7a-91a4-602bc51f2734)  
+
+
+
      
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content)
 
