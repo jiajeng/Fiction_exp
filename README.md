@@ -1,10 +1,10 @@
 # Fiction_exp
 ## content
 [實驗流程](#實驗流程)  
-[資料結構](#Data structure)  
-[event type](#event type)  
-[資料處理(event)](#資料處理(event))  
-[資料處理(eeg)](#資料處理(eeg))  
+[資料結構](#Data_structure)  
+[event type](#event_type)  
+[event資料處理](#event資料處理)  
+[eeg資料處理)](#eeg資料處理)  
 
 ### 實驗流程
 - one trial(72 trial)
@@ -36,11 +36,12 @@
 ### event type
 ![image](https://github.com/user-attachments/assets/0f1bf32d-ef89-422c-aa2b-2798024333e1)
 
-### 資料處理(event)
+### event資料處理
 #### eDat file
 - 把這裡的資料整理成(上述)[#Data structure]的模樣，
+
 | eDat Name | eventfile Name |
-| -- | -- |
+|--|--|
 | Character | Character |
 | PN | story |
 | condition or con_re | condition |
@@ -64,7 +65,7 @@ eDat file --> `整理好的eDat file` and event file --> `eeg trial event flie`
 
 - 所以每個epoch完的trial_1就是克朗31，trial_2就是克朗33，...
 
-### 資料處理(eeg)
+### eeg資料處理
 #### convert file (vhdr to set)
 input(raw) file `./"subid"/raweeg/ ` `E:\Fiction_experiment\Data\p01\raweeg\ --> in 811 PC`  
 output to `./"subid"/eegSet/Raw/ ` `E:\Fiction_experiment\Data\p01\eegSet\Raw\ --> in 811 PC`  
