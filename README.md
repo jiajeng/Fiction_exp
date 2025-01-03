@@ -1,12 +1,11 @@
 # Fiction_exp
 ## content
 [實驗流程](#實驗流程)  
-[資料結構](#Data_structure)  
-[event type](#event_type)  
-[event資料處理](#event資料處理)  
-[eeg資料處理)](#eeg資料處理)  
+[event資料](#Event資料)    
+[行為資料](#行為資料)
+[eeg資料](#eeg資料)  
 
-### 實驗流程
+## 實驗流程
 - one trial(72 trial)
 ![image](https://github.com/user-attachments/assets/1579ce99-fcbb-4a85-a4e2-c8c7785c4052)
 ```每個trial，讓受試者讀一篇故事，讀完後給予一個eye Gaze(直視 or 迴避)的刺激，然後詢問三個問題```  
@@ -14,7 +13,8 @@
 ``` Q2 : 覺得故事是正向還是負向 ```
 ``` Q3 : 覺得這個故事的情緒是哪種(四選一) ```
 
-### Data structure
+## Event資料
+### DataStructure
 - EEG Data : ```E:\Fiction_experiment\Data``` (R811 PC)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ```/LabData/Panlin Fiction EEG``` (NAS 120.126.102.101)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; every subject has two .eeg file. Merge them should has 72 trials. if not then it must redo some trials.  
@@ -23,22 +23,22 @@
 - triallist : ```E:\Fiction_experiment\Triallist``` (R811 PC)   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```/LabData/Panlin Fiction EEG/Triallist ``` (NAS 120.126.102.101)  
   
-| p01 | Character |	Story |	story. no. | Condition | Arousal | Q2.ACC | Q3.ACC | Condition2 | Condition3 | Eye.OnsetDelay |  
-|---|---|---|---|---|---|---|---|---|---|---|
-| `subjectID` | `CharacterName` |	`Neg. Pos.` |	`50:neg. 60:pos.` | `bit1:3(neg.)         4(pos.) bit2: 3,4(congruent) 1(incongruent)` | `story_tone Arousal(1-9)` | `Q2.Accuracy subject_think_positive_or_negetive` | `Q3.Accuracy 1/4_emtion_select` | `story condition(emotion)` | `subject think condition(emotion)`  | `??` | 
-| 1 | 克郎 | N | 50 | 33 | 6 | 1 | 1 | 33 | 33 | 0|
-| 2 | 克郎 | P | 60 | 44 | 9 | 1 | 1 | 44 | 44 | 0|
-| 3 | 克郎 | P | 60 | 41 | 4 | 1 | 1 | 41 | 41 | 0|
-|..|..|..|..|..|..|..|..|..|..|
-| 7 | 雄治 | N | 50 | 31 | 6 | 1 | 0 | 319 | 319 | 0|
-|..|..|..|..|..|..|..|..|..|..|
+| p01 | Character |	Story |	story. no. | Condition | Arousal | Q2.ACC | Q3.ACC | Eye.OnsetDelay | number |  latency | type | Condition2 | Condition3 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| `subjectID` | `CharacterName` |	`Neg. Pos.` |	`50:neg. 60:pos.` | `bit1:3(neg.)         4(pos.) bit2: 3,4(congruent) 1(incongruent)` | `story_tone Arousal(1-9)` | `Q2.Accuracy subject_think_positive_or_negetive` | `Q3.Accuracy 1/4_emtion_select` | `??` | `index in eeg event file` | `eeg latency` | `eeg event type` | `story condition(emotion)` | `subject think condition(emotion)` |
+| 1 | 克郎 | N | 50 | 33 | 6 | 1 | 1 | 0 | 7 | 58365 | S31 | 33 | 33 | 
+| 2 | 克郎 | P | 60 | 44 | 9 | 1 | 1 | 0 | 15 | 94998 | S31 | 44 | 44 | 
+| 3 | 克郎 | P | 60 | 41 | 4 | 1 | 1 | 0 | 23 | 121347 | S31 | 41 | 41 | 
+|..|..|..|..|..|..|..|..|..|..|..|..|..|
+| 7 | 雄治 | N | 50 | 31 | 6 | 1 | 0 | 0 | 55 | 285595 | S31 | 319 | 319 |
+|..|..|..|..|..|..|..|..|..|..|..|..|..|..|
 
-### event type
+### EventType
 ![image](https://github.com/user-attachments/assets/0f1bf32d-ef89-422c-aa2b-2798024333e1)
 
 ### event資料處理
 #### eDat file
-- 把這裡的資料整理成(上述)[#Data structure]的模樣，
+- 把這裡的資料整理成上面的的模樣[structure](####DataStructure)，
 
 | eDat Name | eventfile Name |
 |--|--|
@@ -65,11 +65,17 @@ eDat file --> `整理好的eDat file` and event file --> `eeg trial event flie`
 
 - 所以每個epoch完的trial_1就是克朗31，trial_2就是克朗33，...
 
-### eeg資料處理
-#### convert file (vhdr to set)
+## 行為資料
+### reading Time
+- 在對eeg做epoch的時候，將每個trial的時長都抓出來，加在resort event file後面。
+### behave score 
+- 原有的表格(50subjects_behavior score.xlsx)，分給每個受試者的資料夾內(info.txt)
+
+## eeg資料
+### convert file (vhdr to set)
 input(raw) file `./"subid"/raweeg/ ` `E:\Fiction_experiment\Data\p01\raweeg\ --> in 811 PC`  
 output to `./"subid"/eegSet/Raw/ ` `E:\Fiction_experiment\Data\p01\eegSet\Raw\ --> in 811 PC`  
-#### preprocessing 
+### preprocessing 
 - filter(1-30 Hz)  
 input file ` ./"subid"/eegSet/Raw`    
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; `E:\Fiction_experiment\Data\p01\eegSet\Raw\ --> in 811 PC`  
@@ -92,12 +98,12 @@ input file `./"subid"/eegSet/prep/riaf*.set`
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; `E:\Fiction_experiment\Data\p01\eegSet\prep\riaf*.set --> in 811 PC`  
 output file `./"subid"/eegSet/process/trials_21to22`  
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; `E:\Fiction_experiment\Data\p01\eegSet\process\trials_21to22\tn*.set --> in 811 PC`  --> should have excactly 72 trials   
-#### get reading story time  
+### get reading story time  
 - `get trials data` -->  `get time latency in type 21 to 22 ` --> `store all trial time in one column` --> `save this variable`   
 input file`./"subid"/eegSet/process/trials_21to22`  
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; `E:\Fiction_experiment\Data\p01\eegSet\process\trials_21to22\tn*.set --> in 811 PC`  
 output file `./"subid"/eegSet/process/RdTime.mat (variable Name = oTab, size = 72x1 cell)`
-#### transform to frequency data
+### transform to frequency data
 input file`./"subid"/eegSet/process/trials_21to22`  
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; `E:\Fiction_experiment\Data\p01\eegSet\process\trials_21to22\tn*.set --> in 811 PC`   
 - ` get 5 second data before finish reading story(type 22)` --> for now 20241206
@@ -110,7 +116,7 @@ input file`./"subid"/eegSet/process/trials_21to22`
  ![image](https://github.com/user-attachments/assets/062c6877-3b56-4171-80ea-fab04d40fd2e)
 output file `./"subid"/eegSet/process/trials_21to22_TF`
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; `E:\Fiction_experiment\Data\p01\eegSet\process\trials_21to22_TF\tn*.mat --> in 811 PC`
-#### statistic 1st level 
+### statistic 1st level 
 
   
 
