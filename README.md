@@ -2,8 +2,8 @@
 ## content
 [實驗流程](#實驗流程)  
 [event資料](#Event資料)    
-[行為資料](#行為資料)
-[eeg資料](#eeg資料)  
+[行為資料](#行為資料)   
+[eeg資料](#eeg資料)   
 
 ## 實驗流程
 - one trial(72 trial)
@@ -12,6 +12,7 @@
 ``` 以某個人(18)為主角的故事，分成正向情緒以及負向情緒(2)，以及直視or迴避的刺激(2)，所以有18*2*2=72個trial```
 ``` Q2 : 覺得故事是正向還是負向 ```
 ``` Q3 : 覺得這個故事的情緒是哪種(四選一) ```
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content)
 
 ## Event資料
 ### DataStructure
@@ -38,7 +39,7 @@
 
 ### event資料處理
 #### eDat file
-- 把這裡的資料整理成上面的的模樣[structure](####DataStructure)，
+- 把這裡的資料整理成上面的的模樣[structure](#DataStructure)，
 
 | eDat Name | eventfile Name |
 |--|--|
@@ -64,12 +65,14 @@ eDat file --> `整理好的eDat file` and event file --> `eeg trial event flie`
 ![image](https://github.com/user-attachments/assets/8b14059a-6114-4b18-bf98-d2b76757937b)
 
 - 所以每個epoch完的trial_1就是克朗31，trial_2就是克朗33，...
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content)
 
 ## 行為資料
 ### reading Time
 - 在對eeg做epoch的時候，將每個trial的時長都抓出來，加在resort event file後面。
 ### behave score 
 - 原有的表格(50subjects_behavior score.xlsx)，分給每個受試者的資料夾內(info.txt)
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content)
 
 ## eeg資料
 ### convert file (vhdr to set)
@@ -118,5 +121,5 @@ output file `./"subid"/eegSet/process/trials_21to22_TF`
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; `E:\Fiction_experiment\Data\p01\eegSet\process\trials_21to22_TF\tn*.mat --> in 811 PC`
 ### statistic 1st level 
 
-  
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content) 
 
