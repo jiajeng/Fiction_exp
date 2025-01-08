@@ -61,6 +61,9 @@ eDat file --> `整理好的eDat file` and event file --> `eeg trial event flie`
 - if eeg event file長度小於eDat資料，找到eeg event file Condition2不等於99(該trial刪掉)的，塞進去。
 - if eeg event file長度大於eDat資料，刪掉eeg event file Condition2等於99的，然後接起來。
 
+- eDatfile and event file 合併存成一個excel file
+![image](https://github.com/user-attachments/assets/84c77d76-3349-46ac-8fa1-9857846b1ad5)    
+
 #### resort event file
 - 把所有的event file根據自定義的順序排序
 ![image](https://github.com/user-attachments/assets/8b14059a-6114-4b18-bf98-d2b76757937b)
