@@ -79,6 +79,9 @@ eDat file --> `整理好的eDat file` and event file --> `eeg trial event flie`
 ### behave score 
 - 原有的表格(50subjects_behavior score.xlsx)(下表)，分給每個受試者的資料夾內(info.txt)
 ![image](https://github.com/user-attachments/assets/441b38f9-1a91-4d7a-91a4-602bc51f2734)  
+![image](https://github.com/user-attachments/assets/ac2e9bbf-d8f8-4420-8d7f-b268813ed29c)  
+![image](https://github.com/user-attachments/assets/eb33c512-2fb7-4b4f-a807-3bf12d92bd28)  
+
 
 
 
