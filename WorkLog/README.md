@@ -17,7 +17,8 @@
 - rearrage run process merge all file first --> aim to get trial  
 [2024/12/25](#241225)  
 - check event table then run all subject preprocessing eeg data  
-[2024/12/31](#241231)
+[2024/12/31](#241231)  
+[2025/1/9](#250109)
 - 
 
 ## ~241202<a id="241202_1"></a>
@@ -200,8 +201,14 @@ output : `./eegSet/process/trial_21to22_TF/tn*.mat (BdPow and TFd "struct" )`
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content) 
 
 
-## 
+## 250109
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content)   
+##### meet
+- 對每個人的reading time去掉outlier，讀太快的部分就丟掉，或是讀太久的也丟掉。
+- 留下來的trial根據自身的長度分成三段，轉成頻率
+- 將每個trial根據受試者認為的是正向還是負向情緒分成不同組別去比較
+- 如果有GLM的話，一樣放入age,sex,...,IRI score。
+
 
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content) 
 
