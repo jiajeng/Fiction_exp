@@ -1,26 +1,16 @@
 ## content
-[2024/12/02 Before](#241202_1)   
-- start with convert file type and preprocessing to epoch Data   
-[2024/12/02](#241202_2)
-- get reading timing   
-[2024/12/05](#241205)
-- using wavelet transform to get freqeuncy band     
-[2024/12/06](#241206)
-- statistical    
-[2024/12/10](#241210)  
-- statistical two sample cluster fdr    
-[2024/12/11](#241211)  
-- statistical GLM  
-[2024/12/12](#241212)   
-- arrange event data using raw(?close) event file    
-[2024/12/17](#241217)     
-- rearrage run process merge all file first --> aim to get trial  
-[2024/12/25](#241225)  
-- check event table then run all subject preprocessing eeg data  
-[2024/12/31](#241231)    
-- planning what to do  
-[2025/1/9](#250109)  
-- get outlier and transform to frequency 
+[2024/12/02 Before](#241202_1) --> start with convert file type and preprocessing to epoch Data   
+[2024/12/02](#241202_2) --> get reading timing   
+[2024/12/05](#241205) --> using wavelet transform to get freqeuncy band     
+[2024/12/06](#241206) --> statistical    
+[2024/12/10](#241210) --> statistical two sample cluster fdr     
+[2024/12/11](#241211) --> statistical GLM  
+[2024/12/12](#241212) --> arrange event data using raw(?close) event file    
+[2024/12/17](#241217) --> rearrage run process merge all file first --> aim to get trial  
+[2024/12/25](#241225) --> check event table then run all subject preprocessing eeg data  
+[2024/12/31](#241231) --> planning what to do  
+[2025/1/9](#250109)  --> meet
+[2015/1/15](#250115) --> get outlier and transform to frequency   
 
 ## ~241202<a id="241202_1"></a>
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content)   
