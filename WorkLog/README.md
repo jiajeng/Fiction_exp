@@ -9,7 +9,7 @@
 [2024/12/17](#241217) --> rearrage run process merge all file first --> aim to get trial  
 [2024/12/25](#241225) --> check event table then run all subject preprocessing eeg data  
 [2024/12/31](#241231) --> planning what to do  
-[2025/1/9](#250109)  --> meet
+[2025/1/9](#250109)  --> meet  
 [2015/1/15](#250115) --> get outlier and transform to frequency   
 
 ## ~241202<a id="241202_1"></a>
