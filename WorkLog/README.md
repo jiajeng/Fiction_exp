@@ -11,7 +11,7 @@
 [2024/12/31](#241231) --> planning what to do  
 [2025/1/9](#250109)  --> meet  
 [2025/1/15](#250115) --> get outlier and transform to frequency   
-[2025/2/3](#250203) --> meet
+[2025/2/3](#250203) --> meet  
 [2025/2/6](#250206) --> stat GLM first level
 
 ## ~241202<a id="241202_1"></a>
@@ -241,14 +241,15 @@ output : `./eegSet/process/trial_21to22_TF/tn*.mat (BdPow and TFd "struct" )`
 
 - stat_1stlevel.m
   - Parfile data struct :
-  - `X : X value`
+  - `X : X value` : frequency band power
   - `X_name : x value names(meaning)`
-  - `Y : y value`
+  - `Y : y value` : objective score 
   - `Y_name : y value(meaning)`
-  - `effect : 2nd level variable`
+  - `effect : 2nd level variable` : Age, 
   - `effect_name : effect value meaning`
 - stat_2ndlevel.m
-- Y = 
+- Y : 1st Level Beta value
+- X : Age, 
 
 
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content) 
