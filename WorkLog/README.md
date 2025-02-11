@@ -13,6 +13,7 @@
 [2025/1/15](#250115) --> get outlier and transform to frequency   
 [2025/2/3](#250203) --> meet  
 [2025/2/6](#250206) --> stat GLM first level
+[2025/2/11](#250211) --> design matrix need fix? 
 
 ## ~241202<a id="241202_1"></a>
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content)   
@@ -255,8 +256,31 @@ output : `./eegSet/process/trial_21to22_TF/tn*.mat (BdPow and TFd "struct" )`
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content) 
 
 
-## 
+## 250211
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content)   
+
+- 1st level result like this
+- +- arousal = theta + delta + alpha + beta
+- ![image](https://github.com/user-attachments/assets/b70fc723-470a-4988-9de1-57dd40fa7def)
+- non of any parameter is significant.
+- scatter plot for theta and Y
+- ![image](https://github.com/user-attachments/assets/369b3a84-a467-469f-bee7-c1e06e6dd3bd)
+
+- maybe change model to --> arousal = delta + theta + alpha + beta + contast[[-1 or +1 that subject think is positive or negetive in this trial]]
+- model
+- ![image](https://github.com/user-attachments/assets/9d813ccc-6b3c-4c8b-994b-f9da619992fa)
+- scatter plot for theta and Y
+- ![image](https://github.com/user-attachments/assets/5f949d5a-8bc5-458a-a0cb-0e17a45bcff5)
+
+- 2nd level model
+- Y : beta value from 1st level (delta, theta, alpha, beta)
+- X : Age, Sex, IRI_Fatancy, IRI_Perspective, IRI_Empathic, IRI_distress
+
+- result :
+- delta effect : IRI_Empathic
+- theta effect : Age, IRI_Empathic
+- alpha effect : Nan
+- beta effect : Age, IRI_Empathic
 
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content) 
 
