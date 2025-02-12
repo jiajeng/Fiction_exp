@@ -12,8 +12,8 @@
 [2025/1/9](#250109)  --> meet  
 [2025/1/15](#250115) --> get outlier and transform to frequency   
 [2025/2/3](#250203) --> meet  
-[2025/2/6](#250206) --> stat GLM first level
-[2025/2/11](#250211) --> design matrix need fix? 
+[2025/2/6](#250206) --> stat GLM first level  
+[2025/2/11](#250211) --> design matrix need fix?   
 
 ## ~241202<a id="241202_1"></a>
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content)   
@@ -285,8 +285,27 @@ output : `./eegSet/process/trial_21to22_TF/tn*.mat (BdPow and TFd "struct" )`
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content) 
 
 
-## 
+## 250212
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content)   
+
+- plot result
+- frequency band
+- 2 condition : positive and negative
+
+##### GLM for regression ttest ANOVA
+![image](https://github.com/user-attachments/assets/1484d74e-d5ec-43b4-b149-084dd18e1de8)
+- regression :
+  - X is continuous variables
+- ttest : 
+  - X is dummy variables(only contains 0s and 1s)
+  - p-value is same as traditional way (model p-value ??)
+  - betas `B0 is mean of 0s`,  `B1 is mean of 1s` for only one dummy code
+- ANOVA
+  - X is dummy variables(only contains 0s and 1s)
+  - if has three groups then model has three beta value include interception
+  - as figure above `B0 is mean of the reference group(0s)`, `B1 is mean of 0s - mean of 1s`, `B2 is mean of 0s - mean of 2s`
+ 
+
 
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content) 
 
