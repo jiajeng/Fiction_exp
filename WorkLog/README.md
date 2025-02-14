@@ -386,6 +386,13 @@ or
 
 
 
+> [!Note]
+> ### meeting
+> - 在做行為資料的相關性時，Age跟其他IRI的結果有相關性，所以在2nd level中的模型可能需要加上Age跟其他IRI的interaction term
+> - 正負項模型分成兩個模型跑，為了看單獨模型的影響是正還是負(只看相減看不出來)
+>
+> - 假設要把Y合併arousal跟pos. neg.或許可以把neg.做個鏡像(?) -8的值變成-2 總共是10 所以 10-8 = 2加上負號
+
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content) 
 
 
