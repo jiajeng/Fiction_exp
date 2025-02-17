@@ -16,7 +16,7 @@
 [2025/2/11](#250211) --> change design matrix  
 [2025/2/12](#250212) --> plan to plot result and check statistic is right ?   
 [2025/2/13](#250213) --> plot result(add stat_plotresult.m)   
-[2025/2/14](#250214) --> Y=arousal model design
+[2025/2/14](#250214) --> Y=arousal model design   
 [2025/02/17](#250217)
 
 
@@ -375,11 +375,6 @@ or
 #### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $B_1 - B_6\$ : effect of behave   
 
 #### result
-![delta](https://github.com/user-attachments/assets/5068eae5-7afb-4e83-8ee7-c32014882642)  
-![theta](https://github.com/user-attachments/assets/8aadc4ae-1e6e-4a9c-82ea-faccd35e8857)  
-![alpha](https://github.com/user-attachments/assets/f4f84edd-b134-4bfa-873b-db29d486ac6b)  
-![beta](https://github.com/user-attachments/assets/452bb23e-6902-4cd8-8179-0e6678508b80)  
-
 ![delta_contrast](https://github.com/user-attachments/assets/782393a2-43da-4d96-8ad8-97f65cbf3ab0)
 ![theta_contrast](https://github.com/user-attachments/assets/fcecbf6b-83e3-49f4-9765-dc770fed99da)
 ![alpha_contrast](https://github.com/user-attachments/assets/8652c4b4-9d9b-4225-9ad9-f78274ce8451)
@@ -400,20 +395,35 @@ or
 ## 250217
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content)   
 
-### model 2
+### model
 #### 1st level
-### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $\ Y = B_0 + B_1delta + B_2theta + B_3alpha + B_4beta + B_5valence + B_6(delta * valence ) + B_7(theta * valence ) + B_8(alpha * valence ) + B_9(beta * valence )\$  
+### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $\ Y+ = B_0 + B_1delta + B_2theta + B_3alpha + B_4beta)\$  
+### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $\ Y- = B_0 + B_1delta + B_2theta + B_3alpha + B_4beta)\$  
 #### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $Y\$: arousal
 #### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $B_0\$ : intercept  
-#### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $B_1 - B_4\$ : effect of frequency band in story negative  
-#### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $B_5\$ : General difference between story neg. and pos.(intercept)  
-#### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $B_6 - B_9\$ : difference in the effect of frequnecy band between story neg. and pos.  
+#### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $B_1 - B_4\$ : effect of frequency band
 
 #### 2nd level
-### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $\ Y = B_0 + B_1Age + B_2Sex + B_3IRI_Fantacy + B_4IRI_Perspective + B_5IRI_Empathic + B_6IRI_Distress\$
+### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $\ Y+ = B_0 + B_1Age + B_2Sex\$
+### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $\ Y+ = B_0 + B_1Age + B_2Sex + B_3IRI_Fantacy + B_4(Age * IRI_Fantacy)\$ 
+### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $\ Y+ = B_0 + B_1Age + B_2Sex + B_3IRI_Perspective + B_4(Age * IRI_Perspective)\$ 
+### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $\ Y+ = B_0 + B_1Age + B_2Sex + B_3IRI_Empathic + B_4(Age * IRI_Empathic)\$ 
+### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $\ Y+ = B_0 + B_1Age + B_2Sex + B_3IRI_Distress + B_4(Age * IRI_Distress)\$ 
+
+### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $\ Y- = B_0 + B_1Age + B_2Sex\$
+### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $\ Y- = B_0 + B_1Age + B_2Sex + B_3IRI_Fantacy + B_4(Age * IRI_Fantacy)\$ 
+### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $\ Y- = B_0 + B_1Age + B_2Sex + B_3IRI_Perspective + B_4(Age * IRI_Perspective)\$ 
+### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $\ Y- = B_0 + B_1Age + B_2Sex + B_3IRI_Empathic + B_4(Age * IRI_Empathic)\$ 
+### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $\ Y- = B_0 + B_1Age + B_2Sex + B_3IRI_Distress + B_4(Age * IRI_Distress)\$ 
+
+
 #### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $Y\$ : delta/theta/alpha/beta difference effect
 #### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $B_0\$ : intercept  
 #### &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; $B_1 - B_6\$ : effect of behave   
+
+> [!Note]
+> 把正負向情緒分開放跑  
+>    
 
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content) 
 
