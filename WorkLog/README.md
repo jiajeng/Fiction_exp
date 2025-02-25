@@ -490,7 +490,7 @@ or
   - theta : nan
   - alpha : nan
   - beta : parietal(CP6,P8)
- - Age, Sex, IRI_Distress
+- Age, Sex, IRI_Distress
   - delta : frontal(FC1)
   - theta : nan
   - alpha : frontal(F3)
@@ -518,7 +518,7 @@ or
   - theta : frontal(FC6), parietal(CP6,P8)
   - alpha : nan
   - beta : parietal(CP6,P8)
- - Age, Sex, IRI_Distress
+- Age, Sex, IRI_Distress
   - delta : frontal(FC1)
   - theta : frontal(F3)
   - alpha : nan
@@ -546,7 +546,7 @@ or
   - theta : nan
   - alpha : nan
   - beta : frontal(Fz)
- - Age, Sex, IRI_Distress
+- Age, Sex, IRI_Distress
   - delta : parietal(P3,CP1)
   - theta : nan
   - alpha : frontal(FC6), parietal(P4)
