@@ -17,7 +17,9 @@
 [2025/2/12](#250212) --> plan to plot result and check statistic is right ?   
 [2025/2/13](#250213) --> plot result(add stat_plotresult.m)   
 [2025/2/14](#250214) --> Y=arousal model design   
-[2025/02/17](#250217)
+[2025/02/17](#250217) --> plan what to do next   
+[2025/02/18](#250218) -->   
+[2025/02/25](#250225) --> result for two(neg. pos. story) model and GLM differnece    
 
 
 ## ~241202<a id="241202_1"></a>
@@ -462,8 +464,183 @@ or
 
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content) 
 
-## 
+## 250225
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content)   
+- this model
+![image](https://github.com/user-attachments/assets/8db00414-ddfe-46a6-9610-a3b898e45fd3)
+
+#### Intercept difference : Arousal對??頻段的影響在兩組間有沒有差異(B0)
+- Age and Sex
+  - delta : frontal lobe(Fp1,Fp2,F3,F4),left central parietal(CP1) and left occipital(O1)
+  - theta : nan
+  - alpha : right parietal(P8)
+  - beta : nan
+- Age, Sex, IRI_Fantasy
+  - delta : central, occipital(Cz,O1,Oz)
+  - theta : nan
+  - alpha : parietal, occipital(P3,Oz)
+  - beta : nan
+- Age, Sex, IRI_Perpeptive
+  - delta : occipital(O1)
+  - theta : nan
+  - alpha : nan
+  - beta : nan
+- Age, Sex, IRI_Empathic
+  - delta : frontal(Fz)
+  - theta : nan
+  - alpha : nan
+  - beta : parietal(CP6,P8)
+ - Age, Sex, IRI_Distress
+  - delta : frontal(FC1)
+  - theta : nan
+  - alpha : frontal(F3)
+  - beta : frontal(FC2),occipital(O2)
+- conclusion : 在frontal跟occipital的位置，Delta頻段對Arousal大小的影響，會根據正向情緒或是負向情緒而有所改變
+
+#### Age difference : Arousal對??頻段的影響在兩組間的差異，會不會受到年齡的影響(B1)
+- Age and Sex
+  - delta : frontal(Fp1,Fp2,F4), central(Cz), parietal(P8)
+  - theta : nan
+  - alpha : parietal(P8)
+  - beta : nan
+- Age, Sex, IRI_Fantasy
+  - delta :  nan
+  - theta : nan
+  - alpha : parietal(P3), occipital(Oz)
+  - beta : nan
+- Age, Sex, IRI_Perpeptive
+  - delta : occipital(O1)
+  - theta : nan
+  - alpha : nan
+  - beta : nan
+- Age, Sex, IRI_Empathic
+  - delta : frontal(Fz)
+  - theta : frontal(FC6), parietal(CP6,P8)
+  - alpha : nan
+  - beta : parietal(CP6,P8)
+ - Age, Sex, IRI_Distress
+  - delta : frontal(FC1)
+  - theta : frontal(F3)
+  - alpha : nan
+  - beta : frontal(FC2), occipital(O2)
+- conclusion : 
+
+#### Sex difference : Arousal對??頻段的影響在兩組間的差異，會不會受到性別的影響(B2)
+- Age and Sex
+  - delta : parietal(P3,P8), occipital(Oz)
+  - theta : nan
+  - alpha : nan
+  - beta : parietal(P7)
+- Age, Sex, IRI_Fantasy
+  - delta : parietal(P3,P8),occipital(O1,Oz)
+  - theta : nan
+  - alpha : nan
+  - beta : parietal(P7)
+- Age, Sex, IRI_Perpeptive
+  - delta : parietal(P3,P8)
+  - theta : nan
+  - alpha : nan
+  - beta : frontal(Fz), parietal(P3)
+- Age, Sex, IRI_Empathic
+  - delta : parietal(P3,P8), occipital(Oz)
+  - theta : nan
+  - alpha : nan
+  - beta : frontal(Fz)
+ - Age, Sex, IRI_Distress
+  - delta : parietal(P3,CP1)
+  - theta : nan
+  - alpha : frontal(FC6), parietal(P4)
+  - beta : frontal(Fz, FC2), parietal(P4,P8) 
+- conclusion : 在parietal(P3,P8)的位置上，delta頻段對Arousal的影響在正負情緒的差異，會因為性別的不同而不同
+  
+#### IRI_Fantasy difference : Arousal對??頻段的影響在兩組間的差異，會不會跟IRI_Fantasy的分數有關(B3)
+- IRI_Fantasy
+  - delta : nan
+  - theta : nan 
+  - alpha : parietal(P3,P7),occipital(O1,Oz)
+  - beta : nan
+- IRI_Fantasy x Age
+  - delta : nan
+  - theta : nan 
+  - alpha : parietal(P3,P7),occipital(O1,Oz)
+  - beta : nan
+- conclusion : 在parietal(P3,P7),occipital(O1,Oz)的位置上，alpha頻段對Arousal的影響在正負情緒之間的差異，會跟IRI_Fantasy的分數有關，
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; IRI_Fantasy的beta value > 0 --> alpha頻段對arousal的影響在正負情緒之間的差異越大，IRI_Fantasy的分數就越高。   
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; IRI_Fantasy x Age 的beta value < 0 --> alpha頻段對arousal的影響在正負情緒之間的差異越大，年齡越小。年齡越小，alpha頻段越能夠影響閱讀正負向情緒的感覺?。
+
+#### IRI_Perspective difference : Arousal對??頻段的影響在兩組間的差異，會不會跟IRI_Perspective的分數有關(B3)
+- IRI_Perpeptive
+  - delta : occipital(O1)
+  - theta : nan
+  - alpha : nan
+  - beta : parietal(P3)
+- IRI_Perpeptive x Age
+  - delta : occipital(O1)
+  - theta : nan
+  - alpha : nan
+  - beta : parietal(P3)
+- conclusion : 在parietal(P3),occipital(O1)的位置上，delta頻段以及beta頻段對Arousal的影響在正負情緒之間的差異，會跟IRI_Fantasy的分數有關，
+  
+#### IRI_Empathic difference : Arousal對??頻段的影響在兩組間的差異，會不會跟IRI_Empathic的分數有關(B3)
+- IRI_Perpeptive
+  - delta : Fz
+  - theta : nan
+  - alpha : nan
+  - beta : nan
+- IRI_Perpeptive x Age
+  - delta : Fz
+  - theta : nan
+  - alpha : nan
+  - beta : nan
+- conclusion : 
+ 
+#### IRI_Perspective difference : Arousal對??頻段的影響在兩組間的差異，會不會跟IRI_Perspective的分數有關(B3)
+- IRI_Perpeptive
+  - delta : FC1,T7
+  - theta : 
+  - alpha : 
+  - beta : FC2
+- IRI_Perpeptive x Age
+  - delta : FC1,T7
+  - theta : 
+  - alpha : F3
+  - beta : FC2 O2
+- conclusion
+
+#### all 
+- C3_delta IRI_perspective
+- C4_alpha Age x IRI_Distress
+- C4_alpha IRI_Empathic x IRI_Distress
+- CP1_beta IRI_perspective
+- CP2_alpha IRI_Fantasy, Age x IRI_Fantasy
+- CP5_alpha IRI_Distress, Age x IRI_Distress
+- CP6_alpha IRI_Distress, Age x IRI_Distress, IRI_Distress x IRI_Empathic
+- F3_alpha Age x IRI_Distress, IRI_Empathic x IRI_Distress
+- F3_beta IRI_Distress, Age x IRI_Fantasy, Age:IRI_Distress, IRI_Empathic:IRI_Distress
+- F4_alpha IRI_Perspective x IRI_Empathic, IRI_Empathic x IRI_Distress
+- F7_alpha IRI_Empathic x IRI_Distress
+- F7_beta IRI_Distress
+- FC1_alpha IRI_Distress, Age x IRI_Distress
+- FC1_delta IRI_Distress
+- FC2_beta IRI_Distress, Age x IRI_Distress
+- FC5_alpha Age x IRI_Distress, IRI_Empathic x IRI_Distress
+- FT10_Delta IRI_Empathic x IRI_Distress
+- Fp1_alpha IRI_Empathic x IRI_Distress
+- Fp2_alpha IRI_Empathic x IRI_Distress
+- O1_alpha IRI_Perspective x IRI_Empathic
+- O1_delta IRI_Perspective, IRI_Empathic, Age x IRI_Perspective
+- Oz_beta IRI_Perspective, Age x IRI_Fantasy
+- Oz_delta IRI_Distress, Age x IRI_Perspective
+- P3_alpha Age x IRI_Fantasy, IRI_Perspective x IRI_Empathic
+- P3_beta IRI_Perspective, Age x IRI_Perspecive
+- P7_alpha IRI_Perspective x IRI_Empathic
+- Pz_beta IRI_Perspective
+- T7_alpha IRI_Fantasy, Age x IRI_Distress, IRI_Empathic x IRI_Distress
+- T7_delta IRI_Empathic x IRI_Distress
+- T8_alpha IRI_Empathic x IRI_Distress
+- Tp9_alpha Age x IRI_Perspective
+- 
+
 
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content) 
 
