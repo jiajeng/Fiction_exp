@@ -1,4 +1,4 @@
-function stat_TF(eventpath,varargin)
+function stat1st_TFfB(eventpath,varargin)
     % input : 
     %       'eventpath', "string", eventfile dir
     %   
@@ -13,12 +13,6 @@ function stat_TF(eventpath,varargin)
     %                              enter, default is in
     %                              /./process/trial_21to22_TF(according to data path--> last folder in data path)
     %        
-    %         'freqBand', "struct", fieldnames is band name, contains min
-    %                               and max value of limit of this freq band. 
-    %                               Default is freqBand.delta = [1,4]
-    %                                          freqBand.theta = [4,8]
-    %                                          freqBand.alpha = [8,12]
-    %                                          freqBand.beta = [12,30]
     %         'permute', "double", permutation times, default is 1000.
     opathf = false; 
     dataf = false;
@@ -90,7 +84,12 @@ function stat_TF(eventpath,varargin)
             case 'permute'
                 PERMUTE = varvar{i};
                 if class(PERMUTE) ~= "double"
-                    error(['permute data type is "logical" or "double", input type is ',class(PERMUTE)])
+                    error(['permute data type is "double", input type is ',class(PERMUTE)])
+                end
+            case 'DesignMatrix'
+                DM = varvar{i};
+                if class(DM) ~= "struct"
+                    error(['DesignMatrix data type is "struct", input type is ',class(DM)])
                 end
             otherwise
                 error(['do not know input ',v]);
@@ -108,7 +107,7 @@ function stat_TF(eventpath,varargin)
     if ~opathf % if no set output path
         fold = split(D(1).folder,filesep);
         fold = fold{end};
-        outpath = fullfile(D(1).folder,'..',[fold,'_stat']);
+        outpath = fullfile(D(1).folder,'..',[fold,'_stat'],'1st_level_FB');
         figoutpath1 = fullfile(outpath,'heatmap');
         figoutpath2 = fullfile(outpath,'plot');
     end
@@ -116,23 +115,6 @@ function stat_TF(eventpath,varargin)
 
     % ========================= main =================================
     if procf
-        % --------------- statistical ---------------------
-        % ===== aim : positive story v.s negitive story ====
-        % 1.(real) get two condition
-        % 2.(real) compute two sample t test 
-        % 3.(real) pool all condition together 
-        % 4.(perm) random get half to one coniditon and the other is another conidtion
-        % 5.(perm) repeat 4. to 1000(set for user) times
-        % 6.(real) set a threshold to t value (p = 0.05 using "tinv" function to get t thres)
-        % 7.(real) set 6. threshold to 2. result
-        % 8.(real) get cluster in 7.
-        % 9.(real) sum each cluster t value in 8.
-        % 10.(perm & real) using real cluster index to sum each perm t value
-        % 11.(perm) find the max perm t value across all perm
-        % 12.(perm) the perm distribution that contains max perm is the null hypothesis distribution
-        % 13.(real & perm) using null hypothesis distribution and real data to get p value
-        % 14.(real) ~~~~get cluster-base correction result~~~
-
         % -----------get event tab 
         evtTab = readtable(eventpath,'ReadRowNames',true);
         emtype = string(evtTab.Story);
@@ -141,7 +123,7 @@ function stat_TF(eventpath,varargin)
         % get positive type
         tmp = tmp(contains(tmp,'P') | contains(tmp,'p'));
         emidx = emtype == tmp;
-    
+
         % -----------load all trial data 
         % READ frequency result --> BdPow and TFd --> need BdPow
         ALLDATA = struct();
@@ -166,100 +148,156 @@ function stat_TF(eventpath,varargin)
             % cat all EEG trial potential data
             ALLEEGTRIAL = cat(3,ALLEEGTRIAL,eegPotnData);
         end % loop for all file(trials)
-    
+
         % define number of some feature
         NTRIAL = size(ALLEEGTRIAL,3);
         NTIMES = size(ALLEEGTRIAL,2);
         NCHANNEL = size(ALLEEGTRIAL,1);
 
-    
-        % -----------get t value (P-N)
-        stat = struct();
-        for nFB = 1:length(fBname)
-            data3D = ALLDATA.(fBname{nFB}); % channel x time x trials
-            % initial Tstat struct
-            fdnf = contains(string(fieldnames(stat)),fBname{nFB});
-            if ~fdnf
-                stat.(fBname{nFB}) = [];
-            elseif isempty(fdnf)
-                stat.(fBname{nFB}) = [];
-            end
-        
-            % loop for time point
-            Tval = []; % channel x times
-            for nt = 1:NTIMES
-                % H = uP ~= uN
-                % get t value
-                data2D = squeeze(data3D(:,nt,:)); % channel x trials
-                Pdata2D = data2D(:,emidx); % positive data
-                Ndata2D = data2D(:,~emidx); % negative data
-                [~,~,~,stats] = ttest2(Pdata2D',Ndata2D');
-                Tval = cat(2,Tval,stats.tstat');
-            end % loop for time point
-            stat.(fBname{nFB}).Tval = Tval;
-    
-            % ----------- permutation 
-            Tperm = nan(NCHANNEL,NTIMES,PERMUTE); % channel x times x permutation
-            gcp;
-            parfor npar = 1:PERMUTE
-                ALLdata = data3D;
-                 % channel x times
+        % % --------------- statistical ---------------------
+        % % ===== aim : positive story v.s negitive story ====
+        % % 1.(real) get two condition
+        % % 2.(real) compute two sample t test 
+        % % 3.(real) pool all condition together 
+        % % 4.(perm) random get half to one coniditon and the other is another conidtion
+        % % 5.(perm) repeat 4. to 1000(set for user) times
+        % % 6.(real) set a threshold to t value (p = 0.05 using "tinv" function to get t thres)
+        % % 7.(real) set 6. threshold to 2. result
+        % % 8.(real) get cluster in 7.
+        % % 9.(real) sum each cluster t value in 8.
+        % % 10.(perm & real) using real cluster index to sum each perm t value
+        % % 11.(perm) find the max perm t value across all perm
+        % % 12.(perm) the perm distribution that contains max perm is the null hypothesis distribution
+        % % 13.(real & perm) using null hypothesis distribution and real data to get p value
+        % % 14.(real) ~~~~get cluster-base correction result~~~
+        % 
+        % % -----------get t value (P-N)
+        % stat = struct();
+        % for nFB = 1:length(fBname)
+        %     data3D = ALLDATA.(fBname{nFB}); % channel x time x trials
+        %     % initial Tstat struct
+        %     fdnf = contains(string(fieldnames(stat)),fBname{nFB});
+        %     if ~fdnf
+        %         stat.(fBname{nFB}) = [];
+        %     elseif isempty(fdnf)
+        %         stat.(fBname{nFB}) = [];
+        %     end
+        % 
+        %     % loop for time point
+        %     Tval = []; % channel x times
+        %     for nt = 1:NTIMES
+        %         % H = uP ~= uN
+        %         % get t value
+        %         data2D = squeeze(data3D(:,nt,:)); % channel x trials
+        %         Pdata2D = data2D(:,emidx); % positive data
+        %         Ndata2D = data2D(:,~emidx); % negative data
+        %         [~,~,~,stats] = ttest2(Pdata2D',Ndata2D');
+        %         Tval = cat(2,Tval,stats.tstat');
+        %     end % loop for time point
+        %     stat.(fBname{nFB}).Tval = Tval;
+        % 
+        %     % ----------- permutation 
+        %     Tperm = nan(NCHANNEL,NTIMES,PERMUTE); % channel x times x permutation
+        %     gcp;
+        %     parfor npar = 1:PERMUTE
+        %         ALLdata = data3D;
+        %          % channel x times
+        %         for nt = 1:NTIMES
+        %             data2D = squeeze(ALLdata(:,nt,:)); % channel x trials
+        %             idx = false(NTRIAL,1);
+        %             idx(randperm(NTRIAL,NTRIAL/2)) = true;
+        %             Pdata2D = data2D(:,idx);
+        %             Ndata2D = data2D(:,~idx);
+        %             [~,~,~,stats] = ttest2(Pdata2D',Ndata2D');
+        %             Tperm(:,nt,npar) = stats.tstat;
+        %         end
+        %     end
+        %     delete(gcp);
+        % 
+        %     % ----------- get cluster 
+        %     RTval = stat.(fBname{nFB}).Tval; % channel x times
+        %     % Real data cluster
+        %     thresT = abs(tinv(thres/2,NTRIAL-2));
+        %     mask = abs(stat.(fBname{nFB}).Tval) > thresT; % two tail
+        %     Rclu = getcluster2D(mask); % 
+        % 
+        %     % loop for channels
+        %     Pval = zeros(size(RTval));
+        %     for npch = 1:NCHANNEL
+        %         clu = Rclu(npch,:);
+        %         cluid = unique(clu);
+        %         cluid(cluid == 0) = [];
+        %         rtval = [];
+        %         permD = [];
+        %         for nclu = 1:length(cluid)
+        %             cluidx = clu == cluid(nclu);
+        %             % get cluster index real t value
+        %             rtval = cat(2,rtval,sum(abs(RTval(npch,cluidx))));
+        %             % get cluster index permutation t value
+        %             permD = cat(2,permD,squeeze(sum(abs(Tperm(npch,cluidx,:)),2)));
+        %         end
+        %         [~,max_cluperm] = max(max(permD));
+        %         permD = permD(:,max_cluperm);
+        % 
+        %         for nclu = 1:length(cluid)
+        %             cluidx = clu == cluid(nclu);
+        %             p = sum(permD>rtval(nclu))/PERMUTE;
+        %             if p == 0, p = 0.00000001; end
+        %             Pval(npch,cluidx) = p;
+        %         end
+        %     end
+        %     stat.(fBname{nFB}).cluPval = Pval; % ncahnnel x times
+        % end % loop for freq band
+        % 
+        % stat.permTimes = PERMUTE;
+        % stat.thresP = thres;
+        % stat.thresT = thresT;
+        % % save variables
+        % if ~exist(outpath,'dir'), mkdir(outpath); end 
+        % save(fullfile(outpath,'stat.mat'),"stat");
+        % 
+        % % -------------------------------------------------
+
+        % --------------- statistical ---------------------
+        % ==== aim : using GLM to compute test ====
+        for nfb = 1:length(fBname)
+            % define data
+            data = ALLDATA.(fBname{nFB}); % channel x times x trials
+            stat = struct();
+            if ~contains(fieldnames(stat),fBname{nFB}), stat.(fBname{nFB}) = []; end
+            for nch = 1:NCHANNEL
+                Y = squeeze(data(nch,1,:));
+                if ~exist("DM",'var') % one sample t
+                    X = ones(size(Y));% difference with zero
+                    Xname = {'Intercept'};
+                elseif isempty(DM) % one sample t
+                    X = ones(size(Y));% difference with zero
+                    Xname = {'Intercept'};
+                else
+                    X = [ones(size(Y)),DM.value];
+                    Xname = [{'Intercept'},DM.name];
+                end
+                beta = nan(NTIMES,length(Xname));
+                tval = beta;
                 for nt = 1:NTIMES
-                    data2D = squeeze(ALLdata(:,nt,:)); % channel x trials
-                    idx = false(NTRIAL,1);
-                    idx(randperm(NTRIAL,NTRIAL/2)) = true;
-                    Pdata2D = data2D(:,idx);
-                    Ndata2D = data2D(:,~idx);
-                    [~,~,~,stats] = ttest2(Pdata2D',Ndata2D');
-                    Tperm(:,nt,npar) = stats.tstat;
+                    % ------ first level --> one sample t
+                    % 1. Y = BX --> Y : EEG, X : disign matrix
+                    Y = squeeze(data(nch,nt,:));
+                   
+                    MD = fitlm(X,Y,'Intercept',false);
+                    % 2. get every point beta value and t value 
+                    beta(nt,:) = MD.Coefficients.Estimate';
+                    tval(nt,:) = MD.Coefficients.tStat';
                 end
+                stat.(fBname{nFB}).name = Xname;
+                stat.(fBname{nFB}).beta(nch,:,:) = beta; % channel x times x parameter
+                stat.(fBname{nFB}).tval(nch,:,:) = tval; % channel x times
             end
-            delete(gcp);
-    
-            % ----------- get cluster 
-            RTval = stat.(fBname{nFB}).Tval; % channel x times
-            % Real data cluster
-            thresT = abs(tinv(thres/2,NTRIAL-2));
-            mask = abs(stat.(fBname{nFB}).Tval) > thresT; % two tail
-            Rclu = getcluster2D(mask); % 
-    
-            % loop for channels
-            Pval = zeros(size(RTval));
-            for npch = 1:NCHANNEL
-                clu = Rclu(npch,:);
-                cluid = unique(clu);
-                cluid(cluid == 0) = [];
-                rtval = [];
-                permD = [];
-                for nclu = 1:length(cluid)
-                    cluidx = clu == cluid(nclu);
-                    % get cluster index real t value
-                    rtval = cat(2,rtval,sum(abs(RTval(npch,cluidx))));
-                    % get cluster index permutation t value
-                    permD = cat(2,permD,squeeze(sum(abs(Tperm(npch,cluidx,:)),2)));
-                end
-                [~,max_cluperm] = max(max(permD));
-                permD = permD(:,max_cluperm);
-                
-                for nclu = 1:length(cluid)
-                    cluidx = clu == cluid(nclu);
-                    p = sum(permD>rtval(nclu))/PERMUTE;
-                    if p == 0, p = 0.00000001; end
-                    Pval(npch,cluidx) = p;
-                end
-            end
-            stat.(fBname{nFB}).cluPval = Pval; % ncahnnel x times
-        end % loop for freq band
-    
-        stat.permTimes = PERMUTE;
-        stat.thresP = thres;
-        stat.thresT = thresT;
-        % save variables
-        if ~exist(outpath,'dir'), mkdir(outpath); end 
+        end
+        if ~exist(outpath,'dir'), mkdir(outpath); end
         save(fullfile(outpath,'stat.mat'),"stat");
-    
         % -------------------------------------------------
-    end
+    end % procf
 
     if plotf
         % initial PLOT_CHANNEL ORDER
@@ -350,10 +388,10 @@ function stat_TF(eventpath,varargin)
                     xlabel('time (s)','FontWeight','bold','FontSize',13);
                 end
             end % npch 
-            if ~exist(figoutpath2,'dir'), mkdir(figoutpath2); end
-            saveas(gcf,fullfile(figoutpath2,[fBname{nFB},'.jpeg']));
-            close(gcf)
         end% nFB
+        if ~exist(figoutpath2,'dir'), mkdir(figoutpath2); end
+        saveas(gcf,fullfile(figoutpath2,[fBname{nFB},'.jpeg']));
+        close(gcf)
     end
     % ================================================================
 end % function end
