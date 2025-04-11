@@ -17,7 +17,7 @@
 - step 1 : organize event and behave data
   把event的資料提取出來，主要需要Arousal(受試者認為情緒強度為多少)，story(neg. or pos.)，Character(故事角色)，根據盼琳給的table去append他那邊EEG的時間位置。
   [Detail -- event資料、行為資料](./WorkLog/DataProcDetail.md)
-- step 2 : preprocessing eeg data
+- step 2 : preprocessing eeg data  
   1 . 資料filter 1-30Hz
   
   2 . ASR抑制震幅太大的資料
