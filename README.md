@@ -18,7 +18,16 @@
   把event的資料提取出來，主要需要Arousal(受試者認為情緒強度為多少)，story(neg. or pos.)，Character(故事角色)，根據盼琳給的table去append他那邊EEG的時間位置。
   [Detail -- event資料、行為資料](./WorkLog/DataProcDetail.md)
 - step 2 : preprocessing eeg data
-  資料filter 1-30Hz，ASR，ICA只保留brain跟other，epoch把在閱讀過程中的資料切出來，remove outlier根據閱讀時間的長短把outlier剔除
+  1 . 資料filter 1-30Hz
+  
+  2 . ASR抑制震幅太大的資料
+
+  3 . ICA只保留brain跟other
+  
+  4 . 把在閱讀過程中的資料切出來
+  
+  5 . 根據閱讀時間的長短把outlier剔除
+  
   ![image](https://github.com/user-attachments/assets/c273ba72-b611-4e67-8f18-2c92655dbfa8)
 - step 3 : first and second level for eeg data
     
