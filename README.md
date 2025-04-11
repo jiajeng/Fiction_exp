@@ -14,7 +14,7 @@
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content)
 
 ## DataProcess
-- step 1 : organize event and behave data
+- step 1 : organize event and behave data  
   把event的資料提取出來，主要需要Arousal(受試者認為情緒強度為多少)，story(neg. or pos.)，Character(故事角色)，根據盼琳給的table去append他那邊EEG的時間位置。
   [Detail -- event資料、行為資料](./WorkLog/DataProcDetail.md)
 - step 2 : preprocessing eeg data  
