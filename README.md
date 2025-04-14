@@ -26,10 +26,14 @@
   
   4 . 把在閱讀過程中的資料切出來
   
-  5 . 根據閱讀時間的長短把outlier剔除
-  
+  5 . 根據閱讀時間的長短把outlier剔除  
+
   ![image](https://github.com/user-attachments/assets/c273ba72-b611-4e67-8f18-2c92655dbfa8)
-- step 3 : first and second level for eeg data
+  
+- step 3 : one sample ttest for pos./neg. story freqeuncy band  
+  用GLM去算，Y放頻段power，X只放intercept，看intercept(mean)有沒有顯著(有沒有>0)。
+    
+- step 4 : first and second level for eeg data
     
   - first level   
     分成兩種模型
