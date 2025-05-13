@@ -19,7 +19,9 @@
 [2025/2/14](#250214) --> Y=arousal model design   
 [2025/02/17](#250217) --> plan what to do next   
 [2025/02/18](#250218) -->   
-[2025/02/25](#250225) --> result for two(neg. pos. story) model and GLM differnece    
+[2025/02/25](#250225) --> result for two(neg. pos. story) model and GLM differnece     
+
+[2025/05/13](#250513) --> fix get frequency band 
 
 
 ## ~241202<a id="241202_1"></a>
@@ -644,8 +646,13 @@ or
 
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content) 
 
-## 
+## 250513
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content)   
+
+- Get frequency band : store variable "res" for every trial, contains every channel and their abs bandpower, rel bandpower, ersp bandpower.
+- plot PSD for every trial. plot all channel in one figure.
+- 目前大致上看一下PSD的圖，發現在 O1,Oz,O2,P4的位置，大多在右側，左側偶爾有，有一個5Hz的peak，大概在偏後側的位置C,CP,P的部分10Hz會比較明顯。
+- q06,q01 : 部分5Hz的peak不明顯
 
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content) 
 
