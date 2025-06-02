@@ -31,9 +31,10 @@
   ![image](https://github.com/user-attachments/assets/c273ba72-b611-4e67-8f18-2c92655dbfa8)
   
 
-    
- ![image](https://github.com/user-attachments/assets/c217c959-9796-498b-8ebb-6b4959437a46)
-
+analysis : 
+1. 做四個頻段取整段power，用fft，放不同的regressor進去。[analysis_1st](./WorkLog/analysis_1st)
+   
+2. 用welch取每個頻段，window=fs(1s)，取abs、rel、ersp(baseline = -1s)，1st level:Arousal 跟 power 的相關性，2nd level:每個subject Arousal跟power的相關性有沒有一致。[analysis_2nd](./WorkLog/analysis_2nd)
 
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[content](#content)   
 
