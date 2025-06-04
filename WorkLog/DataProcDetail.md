@@ -31,7 +31,7 @@
   
 | p01 | Character |	Story |	story. no. | Condition | Arousal | Q2.ACC | Q3.ACC | Eye.OnsetDelay | number |  latency | type | Condition2 | Condition3 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| `subjectID` | `CharacterName` |	`Neg. Pos.` |	`50:neg. 60:pos.` | `bit1:3(neg.)         4(pos.) bit2: 3,4(congruent) 1(incongruent)` | `story_tone Arousal(1-9)` | `Q2.Accuracy subject_think_positive_or_negetive` | `Q3.Accuracy 1/4_emtion_select` | `??` | `index in eeg event file` | `eeg latency` | `eeg event type` | `story condition(emotion)` | `subject think condition(emotion)` |
+| `subjectID` | `CharacterName` |	`Neg. Pos.` |	`50:neg. 60:pos.` | `bit1:3(neg.)         4(pos.) bit2: 3,4(congruent) 1(incongruent)` | `story_tone Arousal(1-9)` | `Q2.Accuracy subject_think_positive_or_negetive(compare_to_exp_define)` | `Q3.Accuracy 1/4_emtion_select` | `??` | `index in eeg event file` | `eeg latency` | `eeg event type` | `story condition(emotion)` | `subject think condition(emotion)` |
 | 1 | 克郎 | N | 50 | 33 | 6 | 1 | 1 | 0 | 7 | 58365 | S31 | 33 | 33 | 
 | 2 | 克郎 | P | 60 | 44 | 9 | 1 | 1 | 0 | 15 | 94998 | S31 | 44 | 44 | 
 | 3 | 克郎 | P | 60 | 41 | 4 | 1 | 1 | 0 | 23 | 121347 | S31 | 41 | 41 | 
